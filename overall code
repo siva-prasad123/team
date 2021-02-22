@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+    
+    Scanner sc=new Scanner(System.in);
+    int lastyears=sc.nextInt();
+    
+    int[] pricesofyear =new int[lastyears];
+    boolean profit=false;
+    int sum=0;
+  
+    for(int i=0;i<lastyears;i++) {
+     
+      pricesofyear[i]=sc.nextInt();
+      
+      sum+=pricesofyear[i];
+    }
+    
+   double  average=sum/lastyears;
+  
+  System.out.println("Average Price for this year. "+average);
+  
+   System.out.println("According to last "+lastyears+"years this year price ="+average);
+     int last=pricesofyear.length-1;
+     
+    if(average>pricesofyear[last]){
+      System.out.println("This year formers get profit of"+(average-pricesofyear[last]));
+      profit=true;
+    }
+    else{
+      System.out.println("This year former lose "+(pricesofyear[last]-average));
+      
+    }
+    if(profit){
+      System.out.println("This year rate is "+average);
+    }
+    else{
+     System.out.print("To provide good rate we give last year rate for formers  ");
+      System.out.println(pricesofyear[last]);
+    } 
+
+	}
+}
